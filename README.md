@@ -32,8 +32,8 @@ Este proyecto consiste en una aplicación web diseñada para facilitar la genera
 
 1. Clonar el repositorio:
    ```sh
-   git clone https://github.com/tu-usuario/tu-repositorio.git
-   cd tu-repositorio
+   git clone https://github.com/ComparadaChucho/Informe-Valvulas-Chiaza
+   cd Informe-Valvulas-Chiaza
    ```
 2. Instalar dependencias de PHP:
    ```sh
