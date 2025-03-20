@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignIdFor(Empresa::class)->constrained()->onDelete('cascade');
             $table->string('marca');
             $table->string('modelo');
-            $table->string('n_de_serie');
+            $table->string('n_de_serie')->unique();
             $table->string('diametro');
             $table->enum('tipo_valvula', ['resorte', 'piloto']);
             $table->timestamps();

@@ -1,7 +1,7 @@
 <x-layout>
     <div class="pb-20">
         <x-forms.form method="POST" action="/valvulas">
-            <x-forms.dropdown :options="$opciones" name="empresa" label="Empresa" />
+            <x-forms.dropdown :options="$empresas" name="empresa" label="Empresa" />
 
             <x-forms.divider />
             <div class="grid grid-cols-2 gap-x-4 gap-y-2">
