@@ -1,10 +1,19 @@
 <x-layout>
     <div class="pb-20">
         <x-forms.form method="POST" action="/valvulas">
-            <x-forms.dropdown :options="$empresas" name="empresa" label="Empresa" />
+            <div>
+                <x-forms.input name="empresa" label="Empresa" />
+                <p class="font-normal text-2xs text-white/50">
+                    Por favor, escriba el nombre exacto de la empresa, respetando mayúsculas, minúsculas y espacios. Si no existe, se creará automáticamente.
+                </p>
+            </div>
 
-            <x-forms.divider />
-            <div class="grid grid-cols-2 gap-x-4 gap-y-2">
+            <div class="items-center grid grid-cols-2 justify-between gap-x-5">
+                <x-forms.divider />
+                <x-forms.divider />
+            </div>
+
+            <div class="grid grid-cols-2 gap-x-4 gap-y-3">
                 <x-forms.input name="marca" label="Marca" />
                 <x-forms.input name="modelo" label="Modelo" />
                 <x-forms.input name="n_de_serie" label="Nº de Serie" />
@@ -21,7 +30,7 @@
 
 
             <div class="flex justify-end">
-                <x-forms.button>Submit</x-forms.button>
+                <x-forms.button>Crear</x-forms.button>
             </div>
         </x-forms.form>
     </div>

@@ -13,31 +13,36 @@
 <body class="bg-black text-white font-nunito pb-20">
     <div>
         <nav class="px-10 font-myriad flex justify-between items-center rounded py-4 bg-white/10 border-b border-white/15">
-            <div>
-                <a href="https://chiaza.com.ar/">
-                    <img src="{{ Vite::asset('resources/images/Isologo_Chiaza_hor.png') }}" width="150" alt="">
-                </a>
+            <div class="space-x-12 flex items-center">
+                <div>
+                    <a href="https://chiaza.com.ar/">
+                        <img src="{{ Vite::asset('resources/images/Isologo_Chiaza_hor.png') }}" width="150" alt="">
+                    </a>
+                </div>
+                <div>
+                    <x-nav-link href="/" :active="request()->is('')">
+                        Inicio
+                    </x-nav-link>
+                </div>
             </div>
 
-            <div class="space-x-6">
-                <x-nav-link href="/" :active="request()->is('/')">
-                    Inicio
-                </x-nav-link>
-                <x-nav-link href="/valvula/crear" :active="request()->is('valvula/crear')">
-                    Nueva Valvula
-                </x-nav-link>
-                <x-nav-link href="/valvulas" :active="request()->is('valvulas')">
-                    Ver Valvulas
-                </x-nav-link>
-            </div>
-
-            <div class="space-x-6">
-                <x-nav-link href="/" :active="request()->is('')">
-                    Nuevo Informe
-                </x-nav-link>
-                <x-nav-link href="/" :active="request()->is('')">
-                    Ver Informes
-                </x-nav-link>
+            <div class="space-x-10 flex items-center">
+                <div class="space-x-6">
+                    <x-nav-link href="/valvula/crear" :active="request()->is('valvula/crear')">
+                        Nueva Valvula
+                    </x-nav-link>
+                    <x-nav-link href="/valvulas" :active="request()->is('valvulas')">
+                        Ver Valvulas
+                    </x-nav-link>
+                </div>
+                <div class="space-x-6">
+                    <x-nav-link href="/informe/crear" :active="request()->is('informe/crear')">
+                        Nuevo Informe
+                    </x-nav-link>
+                    <x-nav-link href="/informes" :active="request()->is('')">
+                        Ver Informes
+                    </x-nav-link>
+                </div>
             </div>
         </nav>
 

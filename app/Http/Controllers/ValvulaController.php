@@ -10,9 +10,7 @@ class ValvulaController extends Controller
 {
     public function create () 
     {
-        $empresas = Empresa::pluck('name');
-
-        return view('valvulas.create', compact('empresas'));
+        return view('valvulas.create');
     }
 
     public function store (Request $request) 
@@ -23,15 +21,19 @@ class ValvulaController extends Controller
             'modelo'        => ['required'],
             'n_de_serie'    => ['required', 'unique:valvulas,n_de_serie'],
             'diametro'      => ['required'],
-            'tipo'          => ['required', 'in:resorte,piloto']
+            'tipo'          => ['required']
         ]);
         
         $attributes['tipo'] = strtolower($attributes['tipo']);
 
-        $empresa = Empresa::where('name', $attributes['empresa'])->firstOrFail();
+        $empresa = Empresa::firstOrCreate(['name' => $request->empresa]);
 
         if(!$empresa) {
             return back()->withErrors(['empresa' => 'La empresa no existe.'])->withInput();
+        }
+
+        if($attributes['tipo']!=='resorte' and $attributes['tipo']!=='piloto') {
+            return back()->withErrors(['tipo' => 'Tipo de valvula erroneo'])->withInput();
         }
 
         Valvula::create([

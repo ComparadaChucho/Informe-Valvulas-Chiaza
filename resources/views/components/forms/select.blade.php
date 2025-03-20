@@ -1,16 +1,12 @@
-@props(['label', 'name'])
+@props(['options' => [], 'name' => 'opcion', 'selected' => null, 'label' => $name])
 
-@php
-    $defaults = [
-        'id' => $name,
-        'name' => $name,
-        'class' => 'rounded-xl bg-white/10 border border-white/10 px-5 py-4 w-full'
-    ];
-@endphp
-
-<x-forms.field :$label :$name>
-    <select {{ $attributes($defaults) }}>
-        {{ $slot }}
+<div class="space-y-2">
+    <x-forms.label :name="$name" :label="$label"></x-forms.label>
+    <select name="{{ $name }}" id="{{ $name }}" class="w-full px-4 py-2 border border-white/10 bg-black text-white rounded-md focus:ring-orange focus:border-orange transition-colors duration-300">
+        @foreach ($options as $option)
+            <option value="{{ $option }}" @if ($selected === $option) selected @endif>
+                {{ ucfirst($option) }}
+            </option>
+        @endforeach
     </select>
-</x-forms.field>
-
+</div>

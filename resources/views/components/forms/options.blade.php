@@ -1,8 +1,8 @@
-@props(['options' => [], 'name' => 'opcion', 'selected' => null])
+@props(['options' => [], 'name' => 'opcion', 'selected' => null, 'flex' => 'inline-flex'])
 
 <div class="space-y-2">
     @foreach ($options as $option)
-        <label class="inline-flex items-center space-x-2 cursor-pointer group">
+        <label class="{{ $flex }} items-center space-x-2 cursor-pointer group">
             <input type="radio" name="{{ $name }}" value="{{ $option }}" 
                 class="hidden peer" 
                 @if ($selected === $option) checked @endif>
