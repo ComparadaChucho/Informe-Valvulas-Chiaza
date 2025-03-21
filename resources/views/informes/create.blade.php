@@ -121,8 +121,13 @@
             <div>
                 <x-forms.text-box name="observaciones" label="Observaciones" />
             </div>
+
+            <div class="grid grid-cols-2 gap-x-4 gap-y-3">
+                <x-forms.input name="elaborado_por" label="Elaborado Por:"/>
+                <x-forms.input name="aprobado_por" label="Aprobado Por:"/>
+            </div>
             
-            <div class="mt-1 flex justify-end">
+            <div class="mt-1 flex justify-end gap-x-4">
                 <x-forms.button>Crear</x-forms.button>
             </div>
         </x-forms.form>

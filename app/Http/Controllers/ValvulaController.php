@@ -8,6 +8,15 @@ use Illuminate\Http\Request;
 
 class ValvulaController extends Controller
 {
+    public function index()
+    {
+        $valvulas = Valvula::latest()->with(['informes','empresa'])->get();
+
+        return view('valvulas.index',[
+            'valvulas' => $valvulas
+        ]);
+    }
+
     public function create () 
     {
         return view('valvulas.create');

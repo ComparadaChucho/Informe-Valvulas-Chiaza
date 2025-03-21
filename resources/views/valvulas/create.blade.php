@@ -1,6 +1,6 @@
 <x-layout>
     <div class="pb-20">
-        <x-forms.form method="POST" action="/valvulas">
+        <x-forms.form method="POST" action="/valvula">
             <div>
                 <x-forms.input name="empresa" label="Empresa" />
                 <p class="font-normal text-2xs text-white/50">
